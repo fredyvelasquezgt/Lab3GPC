@@ -24,10 +24,7 @@ window = glfw.display.set_mode((w, h), glfw.OPENGL | glfw.DOUBLEBUF)
 glfw.mouse.set_pos(w / 2, h / 2)
 glfw.display.set_caption("Lab 3 - El Juego del Conway")
 
-# Musica
-mixer.init()
-mixer.music.load("Conway.mp3")
-mixer.music.play(loops=1000)
+
 
 
 
@@ -62,7 +59,6 @@ Coordenadas = [
 
 randomNumber = random.randint(1, 5)
 
-# Generacion de figuras "aleatorias" siguiendo algunos patrones comunes de Conway
 for i in range(0, randomNumber):
     # Generacion de varios numberos random para la posicion de los puntos
     randomNumber2 = random.randint(100, 200)
@@ -146,8 +142,7 @@ def conwayGameOfLife(celdas, tamano, actualizarse):
         tempValue3 = i + 2
         tempValue4 = j + 2
 
-        # Referencia de slices en python:
-        # https://stackoverflow.com/questions/44633798/what-is-the-meaning-of-list-in-this-code
+        
         celdasVivas = sum(celdas[tempValue1:tempValue3, tempValue2:tempValue4])
         celdasVivas = celdasVivas - celdas[i, j]
 
